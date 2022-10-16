@@ -1,10 +1,22 @@
 <script lang="ts" setup>
 import {reactive, ref} from 'vue'
 let myId = ref<number>(12312313);
+let Text = ref<string>('');
 type message = {
    text:string,
    uid:number,
    userPicStore:string,
+}
+let messagePost = function(){
+  let newMessage:message = {
+       text:Text.value,
+       uid:myId.value,
+       userPicStore:'../../../assets/images/home/user_pic.jpg'
+  }
+  if(Text){
+     messageData.push(newMessage);
+     Text.value = '';
+  }
 }
 let messageData = reactive<message[]>(
   [
@@ -70,6 +82,7 @@ let messageData = reactive<message[]>(
     },
   ]
 )
+
 </script>
 <template>
   <div class="message_content">
@@ -83,10 +96,17 @@ let messageData = reactive<message[]>(
             <img src="../../../assets/images/home/user_pic.jpg" />
           </div>
           <div class="message_text" :class="{'message_text_right':myId == i.uid,'message_text_left':myId != i.uid}">
-             {{i.text}}
+              {{i.text}}
           </div>
         </div>
       </div>
+    </div>
+    <div class="message_text_input">
+      <div class="smile">
+        <img src="../../../assets/images/home/smile.png">
+      </div>
+      <div @click="messagePost" class="message_send_btn">发送</div>
+      <textarea v-model="Text" autofocus cols="100" rows="10"></textarea>
     </div>
   </div>
 </template>
@@ -155,6 +175,52 @@ let messageData = reactive<message[]>(
         .message_text_right{
           margin-left: 349px;
         }
+      }
+    }
+  }
+  .message_text_input{
+    width: 100%;
+    height: 30%;
+    position: relative;
+    bottom: 0;
+    overflow: hidden;
+    textarea{
+      width: 95%;
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 20px;
+      height: 70%;
+      position: absolute;
+      bottom: 0;
+      background: #f6f6f6;
+    }
+    .message_send_btn{
+       width: 66px;
+       height: 30px;
+       border-radius: 5px;
+       background: #3d59d4fa;
+       text-align: center;
+       line-height: 30px;
+       font-size: 10px;
+       color: #fff;
+       position: absolute;
+       right: 30px;
+       top: 13px;
+    }
+    .message_send_btn:hover{
+      opacity: 0.9;
+    }
+    .smile{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 10px;
+      top: 13px;
+      img{
+        width: 100%;
+        height: 100%;
       }
     }
   }

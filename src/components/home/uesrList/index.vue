@@ -9,6 +9,14 @@ let search_info = ref<string>('');
         <img src="../../../assets/images/home/add_user.png">
     </div>
     <input v-model="search_info" type="text" placeholder="search">
+    <div class="user_single" style="background:rgba(142, 196, 229, 0.283) ;">
+        <div class="user_pic">
+            <img src="../../../assets/images/home/user_pic.jpg">
+        </div>
+        <div class="user_name">
+            大帅比
+        </div>
+    </div>
     <div v-for="i in 5" class="user_single">
         <div class="user_pic">
             <img src="../../../assets/images/home/user_pic.jpg">
@@ -64,7 +72,6 @@ let search_info = ref<string>('');
     .user_single{
         width: 180px;
         height: 50px;
-        background: #efeff94f;
         border-radius: 10px;
         margin-top: 8px;
         position: relative;
@@ -81,7 +88,6 @@ let search_info = ref<string>('');
                 height: 100%;
             }
         }
-
         .user_name
         {
             width: 100px;
@@ -94,12 +100,8 @@ let search_info = ref<string>('');
             font-size: 16px;
         }
     }
-    .user_single:first-child{
-            background: rgba(142, 196, 229, 0.747);
-    }
-    .user_single:hover{
+    .user_single:hover,.user_single:first-child{
         background: rgba(142, 196, 229, 0.283);
-
     }
 }
 </style>

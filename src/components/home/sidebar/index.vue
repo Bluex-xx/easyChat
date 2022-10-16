@@ -11,7 +11,8 @@
    </div>
    <div class="btn_list">
        <div class="btn_single"><img src="../../../assets/images/home/Messages.png"></div>
-       <div class="btn_single" v-for="i in 3"><img src="../../../assets/images/home/user.png"></div>
+       <div class="btn_single"><img src="../../../assets/images/home/user.png"></div>
+       <div class="btn_single"><img src="../../../assets/images/home/setting.png"></div>
    </div>
 </div>
 </template>
