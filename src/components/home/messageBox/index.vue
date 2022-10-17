@@ -122,7 +122,7 @@ let messageData = reactive<message[]>(
   .message_list {
     width: 100%;
     height: 70%;
-    background: rgba(128, 128, 128, 0.189);
+    background: rgb(27 28 80 / 5%);
     .message_title {
       width: 100%;
       height: 60px;

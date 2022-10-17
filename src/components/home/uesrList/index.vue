@@ -30,7 +30,7 @@ let search_info = ref<string>('');
 <style lang="less" scoped>
 .user_list_content{
     width: 20%;
-    background: #dddddd4d;
+    background: #becfe92b;
     opacity: 0.9;
     height: calc(100% - 60px);
     position: relative;
